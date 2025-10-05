@@ -51,7 +51,7 @@ body {
 }
 .image-area > img {
     width: max(450px, 100%);
-    transform: translateY(-55%);
+    transform: translateY(-50%);
     /* opacity: 0; */
 }
 .side-bar {
