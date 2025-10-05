@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page">
+        <div class="image-area">
+            <img src="https://e1.pxfuel.com/desktop-wallpaper/666/613/desktop-wallpaper-mobile-posted-by-zoey-andersoncute-night-city-cellphone-cyberpunk.jpg" alt="Japanese Street">
+            <div class="side-bar">
+                <img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png" alt="Odin Logo">
+                ODIN
+            </div>
+            <div class="img-credits">
+                Photo by Zoey Andersoncute on Pxfuel
+            </div>
+        </div>
+
+        <div class="contents-area">
+
+            <header>
+                <div class="header-content">
+                    Even though this proyect was supposed to be 
+                    for desktop only, I made it accesible for mobile as well. 
+                    If you resize it or open it on your phone 
+                    it will look different.
+                    Try <i>rezising</i> it.
+                    <br>
+                    <br>
+                    You <i>know</i> you want to.
+                </div>
+            </header>
+
+            <form id="form" action="">
+
+                <h1>Lets do this!</h1>
+
+                <div class="input-area">
+                    <input required 
+                           minlength="2" 
+                           placeholder="" 
+                           type="text" name="first-name" id="first-name">
+                    <label for="first-name">First name</label>
+                </div>
+                <div class="input-area">
+                    <input required 
+                           minlength="2" 
+                           placeholder="" 
+                           type="last-name" name="surname" id="last-name">
+                    <label for="last-name">Last name</label>
+                </div>
+                <div class="input-area">
+                    <input required 
+                           pattern="(?=.*[A-Z]+)(?=.*[a-z]+)(?=.*[0-9]+).{8,}" 
+                           placeholder="" 
+                           type="password" name="password" id="password">
+                    <label for="password">Password</label>
+                    <button id="info-anchor" 
+                            type="button" 
+                            popovertarget="info-box"> 
+                            i
+                    </button>
+                    <div anchor="info-anchor" 
+                         popover="auto" 
+                         id="info-box">
+                        The password requires at least:
+                        <br> - Eight characters
+                        <br> - One undercase letter
+                        <br> - One uppercase letter
+                        <br> - One number.
+                    </div>
+                </div>
+                <div class="input-area">
+                    <input required pattern="(?=.*[A-Z]+)(?=.*[a-z]+)(?=.*[0-9]+).{8,}" 
+                           placeholder="" 
+                           type="password" 
+                           name="pass-confirmation" id="pass-confirmation">
+                    <label for="pass-confirmation">Confirm password</label>
+                </div>
+            </form>
+            <footer>
+                <button type="submit" form="form">
+                    Create Account
+                </button>
+                <p>Already have an Account? 
+                    <a href="">Log in</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

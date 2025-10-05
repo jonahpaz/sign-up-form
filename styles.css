@@ -1,0 +1,261 @@
+@font-face {
+    font-family: "Norse";
+    font-weight: 700;
+    src: url("assets/Norse-Bold.woff2") format("woff2"),
+         url("assets/Norse-Bold.woff") format(".woff");
+}
+@font-face {
+    font-family: "Caudex";
+    font-weight: 400;
+    src: url("assets/Caudex.woff2") format("woff2"),
+         url("assets/Caudex.woff") format("woff");
+}
+@font-face {
+    font-family: "Caudex";
+    font-weight: 700;
+    src: url("assets/Caudex-Bold.woff2") format("woff2"),
+         url("assets/Caudex-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Caudex";
+    font-style: italic;
+    font-weight: 700;
+    src: url("assets/Caudex-BoldItalic.woff2") format("woff2"),
+         url("assets/Caudex-BoldItalic.woff") format("woff");
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Caudex", sans-serif;
+    height: 100vh;
+    background-color: black;
+}
+.page {
+    background-color: white;
+    color: black;
+    /* margin: 0 auto; */
+}
+
+
+
+
+.image-area {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+.image-area > img {
+    width: max(450px, 100%);
+    transform: translateY(-55%);
+    /* opacity: 0; */
+}
+.side-bar {
+    font-family: "Norse";
+    color: white;
+    font-size: 2rem;
+    text-shadow: white 1px 1px 3px;
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    padding: 1rem 0;
+    line-height: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(4, 117, 119, 0.789);
+}
+.side-bar > img {
+    height: 3rem;
+    margin-right: 1rem;
+}
+.image-area .img-credits {
+    text-shadow: rgb(0, 0, 0) 0 2px 2px;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: white;
+}
+
+
+.contents-area {
+    display: flex;
+    flex-direction: column;
+}
+.contents-area i {
+    text-shadow: black 0px 0px 2px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(160, 211, 255);
+    font-weight: bold;
+    padding: 2rem 2rem;
+}
+header .header-content {
+    width: 24rem;
+}
+
+
+form {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form h1 {
+    margin: 1rem auto;
+    text-shadow: black 1px 1px 3px;
+}
+
+.input-area {
+    margin: 1rem auto;
+    position: relative;
+}
+.input-area input {
+    height: 1.5rem;
+    padding: 0.1rem 0.7rem;
+    border: 2px solid rgba(0, 0, 0, 0.407);
+    border-radius: 0.3rem;
+}
+.input-area input:focus,
+.input-area input:active {
+    outline: none;
+    border: 2px solid blue;
+    box-shadow: 1.5px 1.5px 3.5px rgba(0, 0, 0, 0.321);
+}
+.input-area input:valid {
+    border: 2px solid rgb(0, 212, 0);
+}
+.input-area input:not(:placeholder-shown, :focus):invalid {
+    border: 2px solid rgb(255, 0, 0);
+}
+.input-area label {
+    font-size: 1rem;
+    opacity: 0.65;
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 250ms;
+
+    
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+    opacity: 1;
+    top: -0.5rem;
+    font-size: 0.9rem;
+}
+.input-area button {
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    outline-color: transparent;
+    border: 0;
+    background-color: rgba(2, 255, 255, 0.457);
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: rgb(2, 27, 255);
+}
+.input-area #info-box {
+    font-size: 0.9rem;
+    inset:unset;
+    right: anchor(right);
+    bottom: anchor(top);
+    transform: translateY(-1.5rem);
+    width: 14rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0;
+    background-color: rgb(255, 142, 178);
+    opacity: 0;
+    transition: all 300ms allow-discrete;
+    
+}
+.input-area button:focus {
+    box-shadow: 1.5px 1.5px 3.5px rgba(0, 0, 0, 0.321);
+}
+.input-area button:active {
+    box-shadow: inset 1.5px 1.5px 10px rgba(0, 0, 0, 0.321);
+}
+.input-area button:focus ~ #info-box {
+    opacity: 1;
+    @starting-style {
+        opacity: 0;
+    }
+}
+
+footer {
+    padding: 1rem;
+    background-color: rgb(203, 231, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer button {
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1.4rem;
+    color: white;
+    background-color: rgb(12, 169, 216);
+    cursor: pointer;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+}
+footer button:focus {
+    outline-color: transparent;
+    box-shadow: 1.5px 1.5px 3.5px rgba(0, 0, 0, 0.321);
+}
+footer button:active {
+    box-shadow: inset 1.5px 1.5px 10px rgba(0, 0, 0, 0.321);
+}
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+@media screen and (min-width: 600px) {
+    .page {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+    }
+    .contents-area {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .contents-area > * {
+        flex-grow: 1;
+    }
+    .image-area {
+        flex: 1;
+        height: 100vh;
+    }
+    .image-area > img {
+        width: auto;
+        position: absolute;
+        right: 0;
+        transform: translate(none);
+        transform: translateY(-40%);
+    }
+
+    header .header-content {
+        width: clamp(20rem , 70% ,39rem);
+    }
+}
